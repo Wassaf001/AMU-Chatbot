@@ -8,11 +8,11 @@
         </mat-drawer>
         <mat-drawer-content class="example-container">
             <div>
-                <app-chats></app-chats>
+                <app-chats [prompt]="prompt"></app-chats>
             </div>
         </mat-drawer-content>
     </mat-drawer-container>
     <div class="right">
-        <app-prompt></app-prompt>
+        <app-prompt (inputValueChange)="updatePrompt($event)"></app-prompt>
     </div>
 </div>

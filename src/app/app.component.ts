@@ -14,4 +14,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 })
 export class AppComponent {
   title = 'AMU-Chatbot';
+  prompt: string = '';
+  updatePrompt(value: string) {
+    this.prompt = value;
+  }
 }

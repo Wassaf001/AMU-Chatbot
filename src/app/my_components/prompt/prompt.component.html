@@ -1,13 +1,12 @@
 <div class="prompt">
     <div class="input">
         <mat-form-field>
-            <!-- <mat-label>Prompt</mat-label> -->
-            <input matInput placeholder="Enter your Prompt">
+            <input matInput placeholder="Enter your Prompt" [formControl]="myControl">
         </mat-form-field>
     </div>
     <div class="submit">
         <section>
-            <button mat-raised-button>Submit</button>
+            <button mat-raised-button (click)="onSubmit()">Submit</button>
         </section>
     </div>
 </div>
