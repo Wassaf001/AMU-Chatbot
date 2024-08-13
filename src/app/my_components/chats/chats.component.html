@@ -2,7 +2,7 @@
   <mat-accordion class="chats">
     <mat-expansion-panel *ngFor="let prompt of prompts" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
       <mat-expansion-panel-header>
-        <mat-panel-title> {{ prompt.slice(0, 10) }} </mat-panel-title>
+        <mat-panel-title> {{ prompt.slice(0, 1000) }} </mat-panel-title>
         <!-- <mat-panel-description>
           Currently I am {{panelOpenState() ? 'open' : 'closed'}}
         </mat-panel-description> -->

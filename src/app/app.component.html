@@ -1,18 +1,32 @@
-<div class="container">
-    <button mat-raised-button (click)="drawer.toggle()" class="toggle_button">Menu</button>
-    <mat-drawer-container class="example-container-sidenav">
-        <mat-drawer #drawer mode="side" opened>
-            <div class="left">
-                <app-sidebar></app-sidebar>
-            </div>
-        </mat-drawer>
-        <mat-drawer-content class="example-container">
-            <div>
-                <app-chats [prompt]="prompt"></app-chats>
-            </div>
-        </mat-drawer-content>
-    </mat-drawer-container>
-    <div class="right">
-        <app-prompt (inputValueChange)="updatePrompt($event)"></app-prompt>
+<div class="body">
+    <div class="header">
+        <div>
+            <img src="logo.png" class="logo">
+        </div>
+        <div>
+            <h1 class="title">InfoBot</h1>
+        </div>
+        <!-- <div class="user">
+            <img src="user.jpeg" class="user_icon">
+        </div> -->
+    </div>
+    <div class="container">
+        <mat-drawer-container class="example-container-sidenav">
+            <mat-drawer #drawer mode="side" opened (opened)="drawerOpened = true" (closed)="drawerOpened = false">
+                <div class="left">
+                    <app-sidebar></app-sidebar>
+                </div>
+            </mat-drawer>
+            <mat-drawer-content class="example-container">
+                <div>
+                    <app-chats [prompt]="prompt"></app-chats>
+                </div>
+            </mat-drawer-content>
+        </mat-drawer-container>
+        <button mat-raised-button (click)="drawer.toggle()" class="toggle_button">{{drawerOpened ? 'Close' :
+            'Open'}}</button>
+        <div class="right">
+            <app-prompt (inputValueChange)="updatePrompt($event)"></app-prompt>
+        </div>
     </div>
 </div>

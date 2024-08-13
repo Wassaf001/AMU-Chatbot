@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  drawerOpened = false;
   title = 'AMU-Chatbot';
   prompt: string = '';
   updatePrompt(value: string) {
